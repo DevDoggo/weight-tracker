@@ -6,11 +6,12 @@ import os
 
 #=========== Database Section =======================================================
 
-path = "databases/"
+path = "databases/" + "weight.db"
 if not os.path.exists(path):
     os.makedirs(path)
-database = path + "weightDb"
-database = database + ".db"
+
+database = os.path.dirname(os.path.abspath(__file__)) +"/"+ path
+print("\n" + database)
 connection = sqlite3.connect(database)
 cursor = connection.cursor()
 
